@@ -31,7 +31,7 @@ const Categories = () => {
     { title: "Generic", icon: <SiStarbucks /> },
   ];
   return (
-    <div className="flex my-5 px-10">
+    <div className="flex items-center my-5 px-10">
       <Carousel
         additionalTransfrom={0}
         arrows
@@ -57,7 +57,7 @@ const Categories = () => {
               max: 3000,
               min: 1024,
             },
-            items: 10,
+            items: 12,
             partialVisibilityGutter: 40,
           },
           mobile: {
@@ -87,16 +87,19 @@ const Categories = () => {
         swipeable
       >
         {category_list?.map((item) => (
-          <div className="w-20">
-            <div> {item.icon}</div>
+          <div className="flex flex-col items-center w-fit text-base">
+            <div className="my-2 text-fade" style={{ fontSize: "20px" }}>
+              {" "}
+              {item.icon}
+            </div>
             <div>{item.title}</div>
           </div>
         ))}
       </Carousel>
 
-      <div className="flex text-base">
-        <IoMdSwitch fontSize="25px" />
-        <span className="mx-4">Filter</span>
+      <div className="flex text-base border-2 rounded-lg p-2.5">
+        <IoMdSwitch fontSize="25px" className="cursor-pointer" />
+        <span className="mx-4 cursor-pointer">Filter</span>
       </div>
     </div>
   );
