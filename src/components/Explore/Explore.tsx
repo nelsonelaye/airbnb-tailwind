@@ -39,23 +39,23 @@ const Explore = () => {
     },
   ];
   return (
-    <main className="w-full my-7 grid grid-cols-4 space-x-5 px-10">
+    <main className="w-full my-7 flex justify-between space-x-5 px-10">
       {homes?.map((home, index) => (
-        <div key={index} className="w-72 text-base">
+        <div key={index} className="w-72">
           <img
             src={home.image}
             style={{ width: "100%" }}
             className="h-72 rounded-md object-cover"
           />
           <div className="flex justify-between my-2.5">
-            <div>
+            <div className="space-y-1">
               <div className="font-bold">{home.location}</div>
               <div className="text-fade">{`Hosted by ${home.host}`}</div>
               <div className="text-fade">{home.date}</div>
               <div className="font-bold">{`$${home.price} per night`}</div>
             </div>
             <div>
-              <AiFillStar fontSize="16px" className="inline mr-2" />
+              <AiFillStar fontSize="16px" className="inline mr-1" />
               {home.star}
             </div>
           </div>

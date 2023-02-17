@@ -7,8 +7,9 @@ import { SiStarbucks } from "react-icons/si";
 import { IoMdSwitch } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {props} from "./types"
 
-const Categories = () => {
+const Categories = ({onclick}: props) => {
   const category_list = [
     { title: "Tropical", icon: <GiIsland /> },
     { title: "Ski-in/out", icon: <MdOutlineDownhillSkiing /> },
@@ -98,8 +99,8 @@ const Categories = () => {
       </Carousel>
 
       <div className="flex text-base border-2 rounded-lg p-2.5">
-        <IoMdSwitch fontSize="25px" className="cursor-pointer" />
-        <span className="mx-4 cursor-pointer">Filter</span>
+        <IoMdSwitch fontSize="25px" className="cursor-pointer" onClick={onclick} />
+        <span className="mx-4 cursor-pointer" onClick={onclick} >Filter</span>
       </div>
     </div>
   );

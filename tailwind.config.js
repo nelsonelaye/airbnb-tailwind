@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#222",
         fade: "#717171",
         grey: "#f7f7f7",
+        overlay: "rgba(0, 0, 0, 0.4)",
       },
     },
   },
