@@ -10,6 +10,7 @@ import "react-multi-carousel/lib/styles.css";
 import {props} from "./types"
 
 const Categories = ({onclick}: props) => {
+  
   const category_list = [
     { title: "Tropical", icon: <GiIsland /> },
     { title: "Ski-in/out", icon: <MdOutlineDownhillSkiing /> },
