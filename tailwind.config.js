@@ -6,7 +6,9 @@ module.exports = {
       colors: {
         "brand-color": "#ff385c",
         secondary: "#222",
-        fade: "#717171",
+        tc: "#717171",
+        lb: "rgba(0, 0, 0, 0.12)",
+        db: "rgba(198, 184, 184, 0.94)",
         grey: "#f7f7f7",
         overlay: "rgba(0, 0, 0, 0.4)",
       },
