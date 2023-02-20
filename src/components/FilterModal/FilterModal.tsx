@@ -28,8 +28,11 @@ const FilterModal = () => {
             <p className="text-base font-bold my-5">Property Type</p>
             <div className="flex justify-between my-5">
               {propertyTypes?.map((item) => (
-                <div className="w-1/5 border-2 border-db rounded-md p-4">
-                  <div className="text-3xl mb-8">{item.icon}</div>
+                <div
+                  className="w-1/5 rounded-md p-4"
+                  style={{ border: "0.7px solid rgba(198, 184, 184, 0.94)" }}
+                >
+                  <div className="text-3xl mb-10">{item.icon}</div>
 
                   <p className="text-xm font-bold">{item.type}</p>
                 </div>
