@@ -1,3 +1,3 @@
 export interface props {
-  show: boolean;
+  onclick: any;
 }

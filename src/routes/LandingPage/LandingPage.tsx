@@ -4,7 +4,7 @@ import Slide from "../../components/Categories";
 import FilterModal from "../../components/FilterModal";
 
 const LandingPage = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const control_modal = useCallback(() => {
     setShowModal(!showModal);
@@ -13,7 +13,7 @@ const LandingPage = () => {
     <div>
       <Slide onclick={control_modal} />
       <Explore />
-      <FilterModal />
+      {showModal ? <FilterModal onclick={control_modal} /> : null}
     </div>
   );
 };

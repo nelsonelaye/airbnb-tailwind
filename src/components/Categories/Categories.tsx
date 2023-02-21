@@ -7,10 +7,9 @@ import { SiStarbucks } from "react-icons/si";
 import { IoMdSwitch } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {props} from "./types"
+import { props } from "./types";
 
-const Categories = ({onclick}: props) => {
-  
+const Categories = ({ onclick }: props) => {
   const category_list = [
     { title: "Tropical", icon: <GiIsland /> },
     { title: "Ski-in/out", icon: <MdOutlineDownhillSkiing /> },
@@ -89,19 +88,24 @@ const Categories = ({onclick}: props) => {
         swipeable
       >
         {category_list?.map((item) => (
-          <div className="flex flex-col items-center w-fit text-base">
-            <div className="my-2 text-fade" style={{ fontSize: "20px" }}>
+          <div className="flex flex-col items-center w-fit text-sm text-tc">
+            <div className="my-2 text-tc" style={{ fontSize: "20px" }}>
               {" "}
               {item.icon}
             </div>
-            <div>{item.title}</div>
+            <div className="text-center">{item.title}</div>
           </div>
         ))}
       </Carousel>
 
-      <div className="flex text-base border-2 rounded-lg p-2.5">
-        <IoMdSwitch fontSize="25px" className="cursor-pointer" onClick={onclick} />
-        <span className="mx-4 cursor-pointer" onClick={onclick} >Filter</span>
+      <div
+        className="flex h-10 text-base items-center rounded-lg py-2 px-2.5 thick-border cursor-pointer"
+        onClick={onclick}
+      >
+        <IoMdSwitch fontSize="23px" className="cursor-pointer" />
+        <span className="text-sm font-semibold mx-2 cursor-pointer">
+          Filter
+        </span>
       </div>
     </div>
   );
