@@ -1,9 +1,13 @@
+import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import room1 from "../../assets/images/room1.jpg";
 import room2 from "../../assets/images/room2.png";
 import room3 from "../../assets/images/room3.png";
 import room4 from "../../assets/images/room4.jpg";
 import Carousel from "react-multi-carousel";
+import styled from "styled-components";
+import { FiHeart } from "react-icons/fi";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const Explore = () => {
   const homes = [
@@ -40,12 +44,37 @@ const Explore = () => {
       star: 5.0,
     },
   ];
-
+  const responsiveness = {
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024,
+      },
+      items: 1,
+      partialVisibilityGutter: 40,
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0,
+      },
+      items: 1,
+      partialVisibilityGutter: 30,
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464,
+      },
+      items: 1,
+      partialVisibilityGutter: 30,
+    },
+  };
   return (
     <main className="w-full my-7 flex justify-between space-x-5 px-10">
       {homes?.map((home, index) => (
         <div key={index} className="w-72">
-          <Carousel
+          <Slide
             additionalTransfrom={0}
             arrows={false}
             autoPlay={false}
@@ -72,41 +101,24 @@ const Explore = () => {
             sliderClass=""
             slidesToSlide={1}
             swipeable
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024,
-                },
-                items: 1,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-            }}
+            responsive={responsiveness}
           >
             {home.images?.map((image) => (
-              <img
-                src={image}
-                style={{ width: "100%" }}
-                className="h-72 object-cover"
-              />
+              <React.Fragment>
+                <div className="w-full h-full bg-lb z-20 absolute top-0 left-0"></div>
+                <AiOutlineHeart
+                  fontSize="25px"
+                  color="#fff"
+                  className="absolute cursor-pointer top-5 right-5 z-20"
+                />
+                <img
+                  src={image}
+                  style={{ width: "100%" }}
+                  className="h-72 object-cover"
+                />
+              </React.Fragment>
             ))}
-          </Carousel>
+          </Slide>
 
           <div className="flex justify-between my-2.5">
             <div className="space-y-1">
@@ -127,3 +139,22 @@ const Explore = () => {
 };
 
 export default Explore;
+
+const Slide = styled(Carousel)`
+  position: relative;
+  border-radius: 6px;
+
+  .react-multi-carousel-dot-list {
+    margin-bottom: 20px;
+  }
+
+  .react-multi-carousel-dot button {
+    background-color: #717171;
+    border-color: #717171;
+  }
+
+  .react-multi-carousel-dot--active button {
+    background-color: #fff;
+    border-color: #fff;
+  }
+`;
