@@ -2,6 +2,7 @@ import { FaTimes, FaRegBuilding, FaHotel } from "react-icons/fa";
 import { BsHouseDoor } from "react-icons/bs";
 import { props as AppProps } from "./types";
 import Checkbox from "../Checkbox";
+// import Rheostat from "rheostat";
 
 const FilterModal = ({ onclick }: AppProps) => {
   const propertyTypes = [
@@ -23,7 +24,7 @@ const FilterModal = ({ onclick }: AppProps) => {
   ];
   return (
     <div className="flex flex-col justify-center items-center w-full min-h-screen z-20 absolute top-0 bg-overlay">
-      <div className="flex flex-col justify-center items-center bg-white w-4/6 border-b-2 border-fade">
+      <div className="flex flex-col justify-center items-center bg-white my-20 w-4/6 border-b-2 border-fade">
         <div
           className="thick-border w-full flex items-center py-5 px-7 cursor-pointer"
           onClick={onclick}
@@ -59,34 +60,9 @@ const FilterModal = ({ onclick }: AppProps) => {
             <p className="filters">Rooms and Beds</p>
 
             <div className="flex w-full">
-              <input
-                type="radio"
-                id="any"
-                name="bedrooms"
-                value="any"
-                className="hidden"
-              />
-              <label htmlFor="any" className="unselected-radio">
-                {" "}
-                Any
-              </label>
+              <div className="unselected-radio">Any</div>
               {numberOfRooms?.map((item) => (
-                <>
-                  <input
-                    type="radio"
-                    id={item.value.toString()}
-                    name="bedrooms"
-                    value={item.value}
-                    className="hidden"
-                  />
-                  <label
-                    htmlFor={item.value.toString()}
-                    className="unselected-radio"
-                  >
-                    {" "}
-                    {item.value}
-                  </label>
-                </>
+                <div className="unselected-radio">{item.value}</div>
               ))}
             </div>
           </div>
