@@ -3,6 +3,7 @@ import { BsHouseDoor } from "react-icons/bs";
 import { props as AppProps } from "./types";
 import Checkbox from "../Checkbox";
 // import Rheostat from "rheostat";
+import RangeSlider from "../RangeSlider"
 
 const FilterModal = ({ onclick }: AppProps) => {
   const propertyTypes = [
@@ -41,6 +42,7 @@ const FilterModal = ({ onclick }: AppProps) => {
             <p className="text-tc font-medium">
               The average nightly price is $35
             </p>
+            <RangeSlider/>
           </div>
           <div className="border-b-2 border-lb">
             <p className="filters">Type of Place</p>
@@ -56,7 +58,7 @@ const FilterModal = ({ onclick }: AppProps) => {
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-lb">
+          <div className="border-b-2 border-lb ">
             <p className="filters">Rooms and Beds</p>
 
             <div className="flex w-full">
