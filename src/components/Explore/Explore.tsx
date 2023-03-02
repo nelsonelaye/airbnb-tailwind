@@ -103,9 +103,9 @@ const Explore = () => {
     },
   };
   return (
-    <main className="w-full my-7 flex flex-wrap justify-between px-10">
+    <main className="w-full my-7 flex flex-wrap justify-between px-10 max-[768px]:justify-around">
       {homes?.map((home, index) => (
-        <div key={index} className="w-72 my-5">
+        <div key={index} className="w-72 my-3 max-[425px]:w-full">
           <Slide
             additionalTransfrom={0}
             arrows={false}

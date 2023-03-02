@@ -13,9 +13,9 @@ const Header = () => {
         src={logo}
         alt="Airbnb logo"
         width="118px"
-        className="object-contain cursor-pointer"
+        className="object-contain cursor-pointer max-[425px]:w-20"
       />
-      <div className="flex items-center thick-border py-2 rounded-3xl cursor-pointer hover:border-b-2">
+      <div className="flex items-center thick-border py-2 rounded-3xl cursor-pointer hover:border-b-2 max-[900px]:hidden">
         <div className="mx-1.5">
           <span className="px-4 cursor-pointer">Anywhere</span>
 
@@ -34,7 +34,7 @@ const Header = () => {
         </div>
       </div>
       <div className="flex items-center">
-        <span className="cursor-pointer py-2.5 px-4 hover:rounded-3xl hover:bg-grey">
+        <span className="cursor-pointer py-2.5 px-4 hover:rounded-3xl hover:bg-grey max-[490px]:hidden">
           Airbnb your home
         </span>
         <div className="p-2 hover:rounded-full hover:bg-grey">

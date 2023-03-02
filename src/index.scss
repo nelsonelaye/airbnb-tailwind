@@ -2,36 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-    body {
-        @apply text-sm text-secondary;
-    }
+  body {
+    @apply text-sm text-secondary;
+  }
 }
 
 @layer components {
-    .thick-border {
-        border: 0.7px solid rgba(198, 184, 184, 0.94);
-    }
-    .filters {
-        @apply text-base font-bold my-5 capitalize;
-    }
-    .selected-radio {
-        @extend .thick-border;
-        @apply flex items-center justify-center rounded-2xl py-1 w-14 m-3 font-medium text-white;
-        background-color: black;
-    }
-    .unselected-radio {
-        @extend .thick-border;
-        @apply flex items-center justify-center rounded-2xl py-1 w-14 m-3 font-medium;
-    }
+  .thick-border {
+    border: 0.7px solid rgba(198, 184, 184, 0.94);
+  }
+  .filters {
+    @apply text-base font-bold my-5 capitalize;
+  }
+  .selected-option {
+    @extend .thick-border;
+    @apply flex items-center justify-center rounded-2xl py-1 w-14 mr-5 font-medium text-white cursor-pointer;
+    background-color: black;
+  }
+  .unselected-option {
+    @extend .thick-border;
+    @apply flex items-center justify-center rounded-2xl py-1 w-14 mr-5 font-medium cursor-pointer;
+  }
+
+  .range-container{
+    @apply border-lb border-2 rounded py-3 px-5 font-semibold w-1/2;
+  }
 }
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

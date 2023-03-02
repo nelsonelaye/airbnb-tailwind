@@ -123,12 +123,12 @@ const PrettoSlider = styled(Slider)({
 });
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
-  color: '#3a8589',
+  color: 'rgba(0, 0, 0, 0.12)',
   height: 3,
   padding: '13px 0',
   '& .MuiSlider-thumb': {
-    height: 27,
-    width: 27,
+    height: 30,
+    width: 30,
     backgroundColor: '#fff',
     border: '1px solid currentColor',
     '&:hover': {
@@ -176,22 +176,28 @@ export default function CustomizedSlider() {
   };
 
   return (
-    <Box className="mx-auto" sx={{ width: 320 }}>
+    <Box className="w-4/5  m-auto my-8">
      
-      <Typography gutterBottom>Airbnb</Typography>
+
+     {/* <Typography gutterBottom>Airbnb</Typography> */}
       <AirbnbSlider
+      className='mb-4'
         slots={{ thumb: AirbnbThumbComponent }}
-        getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+        getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')} max={1000}
         defaultValue={value} onChange={handleChange}/>
-<div>
-  <div className='border-lb border-2'>
-    <p>min price</p>
+<div className='flex items-center'>
+  <div className='range-container'>
+    <p className='text-tc mb-3'>min price</p>
     <p>${value[0]}</p>
   </div>
+  <div className='h-0.5 w-16 m-5 bg-lb'></div>
+  <div className='range-container'>
+    <p className='text-tc mb-3'>max price</p>
+    <p>${value[value.length - 1]}+</p>
+  </div>
 </div>
-      <Typography gutterBottom>{value[0]}</Typography>
-      <Typography gutterBottom>{value[value.length - 1]}K</Typography>
-
+     
+    
     </Box>
   );
 }
