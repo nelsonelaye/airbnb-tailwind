@@ -13,6 +13,8 @@ export default function ControlledCheckbox() {
       checked={checked}
       onChange={handleChange}
       inputProps={{ "aria-label": "controlled" }}
+      className="my-0 mr-4"
+      style={{ marginTop: "-10px" }}
     />
   );
 }

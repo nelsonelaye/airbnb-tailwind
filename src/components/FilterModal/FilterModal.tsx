@@ -23,7 +23,7 @@ const FilterModal = ({ onclick }: AppProps) => {
     { value: 8 },
   ];
   return (
-    <div className="flex flex-col justify-center items-center w-full min-h-screen z-20 absolute top-0 bg-overlay">
+    <div className="flex flex-col justify-center items-center w-full h-auto z-20 absolute top-0 bg-overlay">
       <div className="flex flex-col justify-center items-center bg-white my-20 w-4/6 border-b-2 border-fade">
         <div
           className="thick-border w-full flex items-center py-5 px-7 cursor-pointer"
@@ -35,20 +35,20 @@ const FilterModal = ({ onclick }: AppProps) => {
 
           <h2 className="text-lg text-center font-bold m-auto">Filters</h2>
         </div>
-        <div className="w-full p-7">
-          <div className="border-b-2 border-lb">
+        <div className="w-full px-7">
+          <div className="border-b-2 border-lb py-5">
             <p className="filters">Price range</p>
-            <p className="text-tc font-medium">
+            <span className="text-tc font-medium">
               The average nightly price is $35
-            </p>
+            </span>
           </div>
-          <div className="border-b-2 border-lb">
+          <div className="border-b-2 border-lb py-5">
             <p className="filters">Type of Place</p>
 
-            <div className="flex items-start">
+            <div className="flex items-start my-5">
               <Checkbox />
-              <div>
-                <label>Private Room</label>
+              <div className="w-2/4">
+                <label className="font-semibold">Private Room</label>
                 <p className="text-tc">
                   Your own room in a home or a hotel, plus some shared common
                   spaces
@@ -56,17 +56,38 @@ const FilterModal = ({ onclick }: AppProps) => {
               </div>
             </div>
           </div>
-          <div className="border-b-2 border-lb">
+          <div className="border-b-2 border-lb py-5">
             <p className="filters">Rooms and Beds</p>
 
-            <div className="flex w-full">
-              <div className="unselected-radio">Any</div>
-              {numberOfRooms?.map((item) => (
-                <div className="unselected-radio">{item.value}</div>
-              ))}
+            <div className="my-5">
+              <p className="text-tc text-sm font-medium my-2">Bedrooms</p>
+              <div className="flex w-full">
+                <div className="selected-option">Any</div>
+                {numberOfRooms?.map((item) => (
+                  <div className="unselected-option">{item.value}</div>
+                ))}
+              </div>
+            </div>
+            <div className="my-5">
+              <p className="text-tc text-sm font-medium my-2">Beds</p>
+              <div className="flex w-full">
+                <div className="selected-option">Any</div>
+                {numberOfRooms?.map((item) => (
+                  <div className="unselected-option">{item.value}</div>
+                ))}
+              </div>
+            </div>
+            <div className="my-5">
+              <p className="text-tc text-sm font-medium my-2">Bathrooms</p>
+              <div className="flex w-full">
+                <div className="selected-option">Any</div>
+                {numberOfRooms?.map((item) => (
+                  <div className="unselected-option">{item.value}</div>
+                ))}
+              </div>
             </div>
           </div>
-          <div>
+          <div className="py-5">
             <p className="filters">Property Type</p>
             <div className="flex justify-between my-5">
               {propertyTypes?.map((item) => (

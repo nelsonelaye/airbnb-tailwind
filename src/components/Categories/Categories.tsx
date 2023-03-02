@@ -8,6 +8,7 @@ import { IoMdSwitch } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { props } from "./types";
+import styled from "styled-components";
 
 const Categories = ({ onclick }: props) => {
   const category_list = [
@@ -32,8 +33,8 @@ const Categories = ({ onclick }: props) => {
     { title: "Generic", icon: <SiStarbucks /> },
   ];
   return (
-    <div className="flex items-center my-5 px-10">
-      <Carousel
+    <div className="flex items-center mt-10 mb-12 px-10">
+      <Slide
         additionalTransfrom={0}
         arrows
         autoPlay={false}
@@ -66,7 +67,7 @@ const Categories = ({ onclick }: props) => {
               max: 464,
               min: 0,
             },
-            items: 2,
+            items: 3,
             partialVisibilityGutter: 30,
           },
           tablet: {
@@ -74,7 +75,7 @@ const Categories = ({ onclick }: props) => {
               max: 1024,
               min: 464,
             },
-            items: 2,
+            items: 5,
             partialVisibilityGutter: 30,
           },
         }}
@@ -88,7 +89,7 @@ const Categories = ({ onclick }: props) => {
         swipeable
       >
         {category_list?.map((item) => (
-          <div className="flex flex-col items-center w-fit text-sm text-tc">
+          <div className="flex flex-col justify-center items-center w-fit text-sm text-tc m-auto">
             <div className="my-2 text-tc" style={{ fontSize: "20px" }}>
               {" "}
               {item.icon}
@@ -96,7 +97,7 @@ const Categories = ({ onclick }: props) => {
             <div className="text-center">{item.title}</div>
           </div>
         ))}
-      </Carousel>
+      </Slide>
 
       <div
         className="flex h-10 text-base items-center rounded-lg py-2 px-2.5 thick-border cursor-pointer"
@@ -112,3 +113,30 @@ const Categories = ({ onclick }: props) => {
 };
 
 export default Categories;
+
+const Slide = styled(Carousel)`
+  .react-multi-carousel-item {
+  }
+  // .react-multi-carousel-item--active {
+  //   border: 2px solid #000;
+  //   color: #000;
+  // }
+  .react-multiple-carousel__arrow--left {
+    display: none;
+  }
+  .react-multiple-carousel__arrow--right {
+    right: calc(2% +1px);
+  }
+
+  .react-multiple-carousel__arrow {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    min-width: 35px;
+    min-height: 35px;
+  }
+  .react-multiple-carousel__arrow::before {
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    font-size: 15px;
+  }
+`;

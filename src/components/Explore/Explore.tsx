@@ -43,6 +43,38 @@ const Explore = () => {
       price: 35,
       star: 5.0,
     },
+    {
+      images: [room1, room2, room3, room4],
+      location: "Lagos, Nigeria",
+      host: "Arthur",
+      date: "19-10-25",
+      price: 35,
+      star: 5.0,
+    },
+    {
+      images: [room2, room1, room3, room4],
+      location: "Lagos, Nigeria",
+      host: "Arthur",
+      date: "19-10-25",
+      price: 35,
+      star: 5.0,
+    },
+    {
+      images: [room3, room2, room4, room1],
+      location: "Lagos, Nigeria",
+      host: "Arthur",
+      date: "19-10-25",
+      price: 35,
+      star: 5.0,
+    },
+    {
+      images: [room4, room3, room1, room2],
+      location: "Lagos, Nigeria",
+      host: "Arthur",
+      date: "19-10-25",
+      price: 35,
+      star: 5.0,
+    },
   ];
   const responsiveness = {
     desktop: {
@@ -71,9 +103,9 @@ const Explore = () => {
     },
   };
   return (
-    <main className="w-full my-7 flex justify-between space-x-5 px-10">
+    <main className="w-full my-7 flex flex-wrap justify-between">
       {homes?.map((home, index) => (
-        <div key={index} className="w-72">
+        <div key={index} className="w-72 mx-6 my-4">
           <Slide
             additionalTransfrom={0}
             arrows={false}
